@@ -1,0 +1,22 @@
+# Obsolete Python scripts
+bruteforce.py
+gpu_cpu_pipeline.py
+
+# Auto-generated runtime files
+hash.txt
+dates.txt
+hashcat.pot
+
+# Downloaded tools
+pdf2john.py
+
+# Unlocked PDFs
+unlocked/
+
+# Ignore contents of drop folder, except for .keep
+drop_file_here/*
+!drop_file_here/.keep
+
+# Python caches
+__pycache__/
+*.pyc
