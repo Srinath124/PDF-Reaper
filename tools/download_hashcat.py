@@ -37,6 +37,10 @@ if filename.lower().endswith('.zip'):
     print('Extracting zip...')
     try:
         with ZipFile(dest, 'r') as z:
+            for member in z.namelist():
+                target = (EXTRACT_DIR / member).resolve()
+                if not str(target).startswith(str(EXTRACT_DIR.resolve())):
+                    raise ValueError(f"Unsafe archive member: {member}")
             z.extractall(EXTRACT_DIR)
         print('Extraction complete to', EXTRACT_DIR)
         # Try to find hashcat.exe or hashcat binary
